@@ -3,14 +3,101 @@
 ## Database API - Cayman Comunity
 > API com funções prontas estilo ORM para facilitar o uso do CRUD com o utilizando as functions do dbConnect do MTA:SA.
 
+## Instancia da API
+> nomedaresource:function(params)
+
 ```lua
 
-### Selecionar
+#Conexão
 
-### Inserir
+-- Configuração no próprio script
 
-### Atualizar
+Database:Connect(database = "string", localhost = "string", username = "string", password = "string")
 
-### Deletar
+-- Selecionar
+
+exports.nameresources:DBSelect()
+
+DBSelect(
+  tableName = "string",
+  {
+    verify = {
+      field = "values"
+      },
+    condition = {
+      "string"
+    }
+  }
+)
+
+
+-- verify são os campos necessários para fazer a verificação dos dados na tabela.
+
+-- condition são os verificadores lógicos AND ou OR.
+
+#Inserir
+
+exports.nameresources:DBInserir()
+
+DBInserir(
+  tableName = "string",
+  {
+    field = "values",
+    field = "values"
+  }
+)
+
+-- field os tipos são number e string. 
+
+#Atualizar
+
+exports.nameresources:DBUpdate()
+
+DBUpdate(
+  tableName = "string",
+  {
+    params = {
+      field = "values"
+    },
+    verify = {
+      field = "values"
+    },
+    condition = {"string"}
+  }
+)
+
+-- params, são campos que serão atualizados com os novos valores.
+
+-- verify são os campos necessários para fazer a verificação dos dados na tabela.
+
+-- condition são os verificadores lógicos AND ou OR.
+
+#Deletar
+
+exports.nameresources:DBDelete()
+
+DBDelete(
+  tableName = "string",
+  {
+    verify = {
+      field = "values"
+      },
+    condition = {
+      "string"
+    }
+  }
+)
+
+-- verify são os campos necessários para fazer a verificação dos dados na tabela.
+
+-- condition são os verificadores lógicos AND ou OR.
+
+#Raw
+
+exports.nameresources:DBRaw()
+
+DBRaw(query = "string")
+
+-- query, elaboração de query personalizadas.
 
 ````

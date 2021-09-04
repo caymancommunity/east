@@ -2,5 +2,9 @@
   <oop>true</oop>
   <script src="main.lua" type="server" cache="false" />
   <script src="exports.lua" type="server" cache="false" />
-  <script src="global.lua" type="server" cache="false" />
+
+  <export function="DBSelect" type="server" />
+  <export function="DBInsert" type="server" />
+  <export function="DBUpdate" type="server" />
+  <export function="DBDelete" type="server" />
 </meta>
