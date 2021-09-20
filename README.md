@@ -1,12 +1,24 @@
-![logo-horizontal](https://user-images.githubusercontent.com/33224319/132082662-1ee95904-40bd-4a98-91a0-3765ae646a8f.png)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/33224319/134019196-82832b47-c91f-4430-85c3-092d4e2fb98c.png" width="120" style="border-radius: 60px;" />
+</p>
+<p align="center" style="font-size: 20pt; font-weight: 500pt;">East ORM | Database</p>
 
-## Database API - Cayman Comunity
+
 > API com funções prontas estilo ORM para facilitar o uso do CRUD com o utilizando as functions do dbConnect do MTA:SA.
 
-## Instancia da API
-> nomedaresource:function(params)
+## Instância da API
 
 ```lua
+-- exportação da funções.
+local database = nameresources()
+
+-- funções disponíveis
+database:Connect(oarams);
+database:DBSelect(params);
+database:DBInsert(params);
+database:DBUpdate(params);
+database:DBDelete(params);
+database:DBRaw(params);
 
 #Conexão
 
@@ -39,7 +51,7 @@ DBSelect(
 
 exports.nameresources:DBInserir()
 
-DBInserir(
+DBInsert(
   tableName = "string",
   {
     field = "values",
