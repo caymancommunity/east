@@ -1,39 +1,47 @@
-function DBSelect(table, params)
+function dbConnect(database, host, username, password)
+  if not database and not host and not username and not password then
+    return false
+  end
+
+  return Database:connect(database, host, username, password)
+end
+
+function dbSelect(table, params)
   if not table and not params then
     return false
   end
 
-  return Database:Select(table, params)
+  return Database:select(table, params)
 end
 
-function DBInsert(table, params)
+function dbInsert(table, params)
   if not table and not params then
     return false
   end
 
-  return Database:Insert(table, params)
+  return Database:insert(table, params)
 end
 
-function DBUpdate(table, params)
+function dbUpdate(table, params)
   if not table and not params then
     return false
   end
 
-  return Database:Update(table, params)
+  return Database:update(table, params)
 end
 
-function DBDelete(table, params)
+function dbDelete(table, params)
   if not table and not params then
     return false
   end
 
-  return Database:Delete(table, params)
+  return Database:delete(table, params)
 end
 
-function DBRaw(query)
+function dbRaw(query)
   if not query then
     return false
   end
 
-  return Database:Raw(query)
+  return Database:raw(query)
 end

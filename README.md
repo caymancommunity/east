@@ -3,7 +3,6 @@
 </p>
 <p align="center" style="font-size: 20pt; font-weight: 500pt;">East ORM | Database</p>
 
-
 > API com funções prontas estilo ORM para facilitar o uso do CRUD com o utilizando as functions do dbConnect do MTA:SA.
 
 ## Instância da API
@@ -13,12 +12,12 @@
 local database = nameresources()
 
 -- funções disponíveis
-database:Connect(oarams);
-database:DBSelect(params);
-database:DBInsert(params);
-database:DBUpdate(params);
-database:DBDelete(params);
-database:DBRaw(params);
+database:dbConnect(params);
+database:dbSelect(params);
+database:dbInsert(params);
+database:dbUpdate(params);
+database:dbDelete(params);
+database:dbRaw(params);
 
 #Conexão
 
@@ -28,9 +27,9 @@ Database:Connect(database = "string", localhost = "string", username = "string",
 
 -- Selecionar
 
-exports.nameresources:DBSelect()
+exports.nameresources:dbSelect()
 
-DBSelect(
+dbSelect(
   tableName = "string",
   {
     verify = {
@@ -49,9 +48,9 @@ DBSelect(
 
 #Inserir
 
-exports.nameresources:DBInserir()
+exports.nameresources:dbInserir()
 
-DBInsert(
+dbInsert(
   tableName = "string",
   {
     field = "values",
@@ -59,13 +58,13 @@ DBInsert(
   }
 )
 
--- field os tipos são number e string. 
+-- field os tipos são number e string.
 
 #Atualizar
 
-exports.nameresources:DBUpdate()
+exports.nameresources:dbUpdate()
 
-DBUpdate(
+dbUpdate(
   tableName = "string",
   {
     params = {
@@ -86,9 +85,9 @@ DBUpdate(
 
 #Deletar
 
-exports.nameresources:DBDelete()
+exports.nameresources:dbDelete()
 
-DBDelete(
+dbDelete(
   tableName = "string",
   {
     verify = {
@@ -106,10 +105,10 @@ DBDelete(
 
 #Raw
 
-exports.nameresources:DBRaw()
+exports.nameresources:dbRaw()
 
-DBRaw(query = "string")
+dbRaw(query = "string")
 
 -- query, elaboração de query personalizadas.
 
-````
+```

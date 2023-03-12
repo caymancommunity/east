@@ -2,7 +2,7 @@ Database = {
   access = nil
 }
 
-function Database:Connect(database, host, username, password)
+function Database:connect(database, host, username, password)
   setmetatable({}, {__index = Database})
 
   self.access = Connection("mysql", "dbname=" .. database .. ";host=" .. host, username, password)
@@ -16,7 +16,7 @@ function Database:Connect(database, host, username, password)
   return false
 end
 
-function Database:Select(tableDb, params)
+function Database:select(tableDb, params)
   local v = {}
   local c = {}
 
@@ -54,7 +54,7 @@ function Database:Select(tableDb, params)
   return false
 end
 
-function Database:Insert(tableDb, params)
+function Database:insert(tableDb, params)
   local d = ""
   local v = {}
 
@@ -76,7 +76,7 @@ function Database:Insert(tableDb, params)
   return false
 end
 
-function Database:Update(tableDb, params)
+function Database:update(tableDb, params)
   local p = {}
   local v = {}
   local c = {}
@@ -128,7 +128,7 @@ function Database:Update(tableDb, params)
   return false
 end
 
-function Database:Delete(tableDb, params)
+function Database:delete(tableDb, params)
   local v = {}
   local c = {}
 
@@ -165,7 +165,7 @@ function Database:Delete(tableDb, params)
   return false
 end
 
-function Database:Raw(query)
+function Database:raw(query)
   if type(query) == "string" then
     local send = self.access:query(tostring(query)):poll(-1)
 
@@ -178,6 +178,3 @@ function Database:Raw(query)
 
   return false
 end
-
--- Init database connection
-Database:Connect("ccr_database", "127.0.0.1", "root", password)
